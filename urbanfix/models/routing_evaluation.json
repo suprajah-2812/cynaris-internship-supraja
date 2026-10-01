@@ -1,0 +1,7 @@
+{
+    "confidence_threshold": 0.85,
+    "total_holdout_emails": 12,
+    "auto_routed": 0,
+    "human_queue": 12,
+    "auto_route_percentage": 0.0
+}

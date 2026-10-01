@@ -66,3 +66,41 @@ The evaluation was performed on a 12-sample holdout set.
 ### Dataset Limitation
 
 The checkpoint specifies a 2,000-email labelled dataset and a target macro F1 above 0.82. The available labelled sample dataset contains only 56 examples and uses service-category labels. Therefore, the current result should be considered a baseline/prototype evaluation rather than the final 2,000-email checkpoint result.
+
+## Checkpoint 2 – Routing Logic and Confidence Scoring
+
+### Routing Workflow
+
+The trained text classifier was extended with calibrated confidence scoring and routing logic.
+
+The routing rule is:
+
+- Confidence > 0.85 → `AUTO_ROUTE`
+- Confidence <= 0.85 → `HUMAN_QUEUE`
+
+### Implementation
+
+1. Loaded the calibrated email classifier and TF-IDF vectorizer.
+2. Generated a predicted category for each email.
+3. Calculated the calibrated prediction confidence.
+4. Applied the client-defined 0.85 confidence threshold.
+5. Automatically routed high-confidence predictions.
+6. Sent lower-confidence predictions to the human queue.
+
+### Available Data Evaluation
+
+The available dataset provided only 56 labelled samples, resulting in 12 holdout samples using the existing 80/20 stratified split.
+
+Results:
+
+- Total holdout emails: 12
+- Auto-routed: 0
+- Human queue: 12
+- Auto-route percentage: 0.00%
+- Confidence threshold: 0.85
+
+### Checkpoint Limitation
+
+The checkpoint requires testing on 200 holdout emails. The required 2,000 labelled customer-support email dataset was not available in the provided data pack, so a 200-email evaluation could not be performed without inventing or substituting data.
+
+The current routing result therefore represents an evaluation on the available 12-sample holdout set.

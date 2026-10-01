@@ -6,6 +6,8 @@ from sklearn.metrics import classification_report
 from sklearn.svm import LinearSVC
 from sklearn.model_selection import StratifiedKFold, cross_val_score
 import joblib
+from sklearn.calibration import CalibratedClassifierCV
+
 
 
 
@@ -129,3 +131,23 @@ with open("urbanfix/models/evaluation_results.json", "w", encoding="utf-8") as f
     json.dump(report, file, indent=4)
 
 print("\nEvaluation results saved successfully.")
+
+
+
+# Create a calibrated Linear SVM for confidence scoring
+calibrated_model = CalibratedClassifierCV(
+    estimator=LinearSVC(),
+    cv=5,
+    method="sigmoid"
+)
+
+# Train the calibrated classifier
+calibrated_model.fit(X_train_tfidf, y_train)
+
+# Save the calibrated model
+joblib.dump(
+    calibrated_model,
+    "urbanfix/models/calibrated_email_classifier.pkl"
+)
+
+print("\nCalibrated classifier trained and saved successfully.")
