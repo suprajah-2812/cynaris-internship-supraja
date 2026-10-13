@@ -108,3 +108,35 @@ Three separate application modules are not present in the current project struct
 - [x] Documented the current folder structure.
 - [ ] Locate or obtain the Day 2 starter script, if required by the mentor.
 - [ ] Confirm the configuration and module structure when additional application code is available.
+
+
+### Project Structure Explorer Output
+
+The `project_task_day2.py` script lists the visible top-level project files and folders and reports the total number of Python files, excluding virtual environment paths.
+
+- Top-level files: `README.md`, `project_task_day1.py`, `project_task_day2.py`
+- Top-level folder: `evidence/`
+- Total Python files (excluding venv): 2
+
+### Main Entry Point and Script Purpose
+
+The current project contains two Python scripts:
+
+- `project_task_day1.py` — verifies LangChain and ChromaDB imports and displays their installed versions.
+- `project_task_day2.py` — explores the project directory, lists visible files and folders, displays file sizes, and counts Python files while excluding virtual-environment and `__pycache__` paths.
+
+The Day 2 script executes from top to bottom when run directly. It does not define a separate `main()` function.
+
+A dedicated entry point for the complete RAG application has not yet been identified.
+
+### Configuration and Environment Variables
+
+- `.gitignore` contains rules for files and folders that Git should ignore.
+- The current project directory does not contain a visible `.env`, `config.py`, or `settings.py` file.
+- No dedicated application configuration or environment-variable file has been identified in the current project.
+
+### Key Python Modules
+
+1. `project_task_day1.py` — verifies the installed LangChain and ChromaDB libraries.
+2. `project_task_day2.py` — lists project files and folders and counts Python files, excluding virtual-environment paths.
+3. **Third module:** Not available in the current project directory. The RAG application modules have not yet been added.
