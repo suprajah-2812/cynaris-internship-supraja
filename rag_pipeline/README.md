@@ -137,6 +137,8 @@ A dedicated entry point for the complete RAG application has not yet been identi
 
 ### Key Python Modules
 
-1. `project_task_day1.py` — verifies the installed LangChain and ChromaDB libraries.
-2. `project_task_day2.py` — lists project files and folders and counts Python files, excluding virtual-environment paths.
-3. **Third module:** Not available in the current project directory. The RAG application modules have not yet been added.
+1. **`langchain`** — Used in `project_task_day1.py` to verify the LangChain installation and display its version. It provides tools for building applications powered by language models.
+2. **`chromadb`** — Used in `project_task_day1.py` to verify the ChromaDB installation and display its version. It provides vector storage and similarity search capabilities for RAG applications.
+3. **`pathlib`** — Used in `project_task_day2.py` to search the project directory recursively for Python files.
+
+**Note:** These are imported Python/library modules. The current project contains two Python source files; three separate application modules have not yet been identified.
